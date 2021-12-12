@@ -42,6 +42,13 @@ public class UserOperationLog implements Serializable {
 
     /**
      * Database Column Remarks:
+     *   url
+     */
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user_operation_log.url")
+    private String url;
+
+    /**
+     * Database Column Remarks:
      *   创建时间
      */
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user_operation_log.created")
@@ -142,6 +149,22 @@ public class UserOperationLog implements Serializable {
         this.status = status;
     }
 
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user_operation_log.url")
+    public String getUrl() {
+        return url;
+    }
+
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source Table: user_operation_log")
+    public UserOperationLog withUrl(String url) {
+        this.setUrl(url);
+        return this;
+    }
+
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user_operation_log.url")
+    public void setUrl(String url) {
+        this.url = url == null ? null : url.trim();
+    }
+
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user_operation_log.created")
     public LocalDateTime getCreated() {
         return created;
@@ -239,6 +262,7 @@ public class UserOperationLog implements Serializable {
             && (this.getMethod() == null ? other.getMethod() == null : this.getMethod().equals(other.getMethod()))
             && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
             && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
+            && (this.getUrl() == null ? other.getUrl() == null : this.getUrl().equals(other.getUrl()))
             && (this.getCreated() == null ? other.getCreated() == null : this.getCreated().equals(other.getCreated()))
             && (this.getUpdated() == null ? other.getUpdated() == null : this.getUpdated().equals(other.getUpdated()));
     }
@@ -252,6 +276,7 @@ public class UserOperationLog implements Serializable {
         result = prime * result + ((getMethod() == null) ? 0 : getMethod().hashCode());
         result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
         result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        result = prime * result + ((getUrl() == null) ? 0 : getUrl().hashCode());
         result = prime * result + ((getCreated() == null) ? 0 : getCreated().hashCode());
         result = prime * result + ((getUpdated() == null) ? 0 : getUpdated().hashCode());
         return result;
@@ -268,6 +293,7 @@ public class UserOperationLog implements Serializable {
         sb.append(", method=").append(method);
         sb.append(", userId=").append(userId);
         sb.append(", status=").append(status);
+        sb.append(", url=").append(url);
         sb.append(", created=").append(created);
         sb.append(", updated=").append(updated);
         sb.append(", requestBody=").append(requestBody);

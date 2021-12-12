@@ -9,5 +9,6 @@ icu/nickxiao/model/request/BlogQueryData$BlogQueryDataBuilder.class
 icu/nickxiao/model/request/BlogQueryData.class
 icu/nickxiao/model/service/impl/UserOperationLogModelServiceImpl.class
 icu/nickxiao/model/dto/UserOperationLogDto$UserOperationLogDtoBuilder.class
+icu/nickxiao/model/assembler/BlogStructKitImpl.class
 icu/nickxiao/model/service/IBlogModelService.class
 icu/nickxiao/model/assembler/UserOperationLogStructKit.class

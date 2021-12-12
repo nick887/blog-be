@@ -41,7 +41,6 @@ public class InterceptResponse implements ResponseBodyAdvice<Object> {
         String requestId = MDC.get(Constants.KEY_REQUEST_ID);
         Long requestIdL = Long.parseLong(requestId);
         String response = mapper.writeValueAsString(body);
-        System.out.println(response.length());
         userOperationLogModelService.update(UserOperationLogDto.builder()
                 .requestId(requestIdL)
                 .responseBody(response.length() > 1024 ? response.substring(0, 1024) : response)

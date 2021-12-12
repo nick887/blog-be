@@ -21,4 +21,5 @@ public class UserOperationLogDto {
     private Long userId;
     private int status;
     private String requestParams;
+    private String url;
 }

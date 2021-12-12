@@ -125,10 +125,10 @@ public class JwtFilter extends BasicHttpAuthenticationFilter {
         // 插入日志数据
         userOperationLogModelService.add(UserOperationLogDto.builder().requestId(requestIdL).build());
         // 跨域时会首先发送一个option请求，这里我们给option请求直接返回正常状态
-        if (httpServletRequest.getMethod().equals(RequestMethod.OPTIONS.name())) {
+        /*if (httpServletRequest.getMethod().equals(RequestMethod.OPTIONS.name())) {
             httpServletResponse.setStatus(HttpStatus.OK.value());
             return false;
-        }
+        }*/
         return super.preHandle(request, response);
     }
 

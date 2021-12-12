@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2021-12-12T13:28:43+0800",
-    comments = "version: 1.4.1.Final, compiler: javac, environment: Java 11.0.13 (Azul Systems, Inc.)"
+    date = "2021-12-12T13:56:30+0800",
+    comments = "version: 1.4.1.Final, compiler: javac, environment: Java 11.0.3 (AdoptOpenJDK)"
 )
 @Component
 public class UserOperationLogStructKitImpl implements UserOperationLogStructKit {

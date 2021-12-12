@@ -40,6 +40,13 @@ public final class UserOperationLogDynamicSqlSupport {
 
     /**
      * Database Column Remarks:
+     *   url
+     */
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user_operation_log.url")
+    public static final SqlColumn<String> url = userOperationLog.url;
+
+    /**
+     * Database Column Remarks:
      *   创建时间
      */
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user_operation_log.created")
@@ -82,6 +89,8 @@ public final class UserOperationLogDynamicSqlSupport {
         public final SqlColumn<Long> userId = column("user_id", JDBCType.BIGINT);
 
         public final SqlColumn<Integer> status = column("`status`", JDBCType.INTEGER);
+
+        public final SqlColumn<String> url = column("url", JDBCType.VARCHAR);
 
         public final SqlColumn<LocalDateTime> created = column("created", JDBCType.TIMESTAMP);
 

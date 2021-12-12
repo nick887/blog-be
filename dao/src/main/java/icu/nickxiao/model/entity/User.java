@@ -49,6 +49,13 @@ public class User implements Serializable {
 
     /**
      * Database Column Remarks:
+     *   密码
+     */
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user.password")
+    private String password;
+
+    /**
+     * Database Column Remarks:
      *   创建时间
      */
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user.created")
@@ -144,6 +151,22 @@ public class User implements Serializable {
         this.role = role == null ? null : role.trim();
     }
 
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user.password")
+    public String getPassword() {
+        return password;
+    }
+
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source Table: user")
+    public User withPassword(String password) {
+        this.setPassword(password);
+        return this;
+    }
+
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user.password")
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
+    }
+
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user.created")
     public LocalDateTime getCreated() {
         return created;
@@ -194,6 +217,7 @@ public class User implements Serializable {
             && (this.getNickname() == null ? other.getNickname() == null : this.getNickname().equals(other.getNickname()))
             && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
             && (this.getRole() == null ? other.getRole() == null : this.getRole().equals(other.getRole()))
+            && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()))
             && (this.getCreated() == null ? other.getCreated() == null : this.getCreated().equals(other.getCreated()))
             && (this.getUpdated() == null ? other.getUpdated() == null : this.getUpdated().equals(other.getUpdated()));
     }
@@ -208,6 +232,7 @@ public class User implements Serializable {
         result = prime * result + ((getNickname() == null) ? 0 : getNickname().hashCode());
         result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
         result = prime * result + ((getRole() == null) ? 0 : getRole().hashCode());
+        result = prime * result + ((getPassword() == null) ? 0 : getPassword().hashCode());
         result = prime * result + ((getCreated() == null) ? 0 : getCreated().hashCode());
         result = prime * result + ((getUpdated() == null) ? 0 : getUpdated().hashCode());
         return result;
@@ -225,6 +250,7 @@ public class User implements Serializable {
         sb.append(", nickname=").append(nickname);
         sb.append(", status=").append(status);
         sb.append(", role=").append(role);
+        sb.append(", password=").append(password);
         sb.append(", created=").append(created);
         sb.append(", updated=").append(updated);
         sb.append(", serialVersionUID=").append(serialVersionUID);

@@ -35,7 +35,7 @@ import org.mybatis.dynamic.sql.util.mybatis3.MyBatis3Utils;
 @Mapper
 public interface UserMapper {
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source Table: user")
-    BasicColumn[] selectList = BasicColumn.columnList(id, email, nickname, status, role, created, updated);
+    BasicColumn[] selectList = BasicColumn.columnList(id, email, nickname, status, role, password, created, updated);
 
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source Table: user")
     @SelectProvider(type=SqlProviderAdapter.class, method="select")
@@ -66,6 +66,7 @@ public interface UserMapper {
         @Result(column="nickname", property="nickname", jdbcType=JdbcType.VARCHAR),
         @Result(column="status", property="status", jdbcType=JdbcType.VARCHAR),
         @Result(column="role", property="role", jdbcType=JdbcType.VARCHAR),
+        @Result(column="password", property="password", jdbcType=JdbcType.VARCHAR),
         @Result(column="created", property="created", jdbcType=JdbcType.TIMESTAMP),
         @Result(column="updated", property="updated", jdbcType=JdbcType.TIMESTAMP)
     })
@@ -100,6 +101,7 @@ public interface UserMapper {
             .map(nickname).toProperty("nickname")
             .map(status).toProperty("status")
             .map(role).toProperty("role")
+            .map(password).toProperty("password")
             .map(created).toProperty("created")
             .map(updated).toProperty("updated")
         );
@@ -113,6 +115,7 @@ public interface UserMapper {
             .map(nickname).toProperty("nickname")
             .map(status).toProperty("status")
             .map(role).toProperty("role")
+            .map(password).toProperty("password")
             .map(created).toProperty("created")
             .map(updated).toProperty("updated")
         );
@@ -126,6 +129,7 @@ public interface UserMapper {
             .map(nickname).toPropertyWhenPresent("nickname", record::getNickname)
             .map(status).toPropertyWhenPresent("status", record::getStatus)
             .map(role).toPropertyWhenPresent("role", record::getRole)
+            .map(password).toPropertyWhenPresent("password", record::getPassword)
             .map(created).toPropertyWhenPresent("created", record::getCreated)
             .map(updated).toPropertyWhenPresent("updated", record::getUpdated)
         );
@@ -165,6 +169,7 @@ public interface UserMapper {
                 .set(nickname).equalTo(record::getNickname)
                 .set(status).equalTo(record::getStatus)
                 .set(role).equalTo(record::getRole)
+                .set(password).equalTo(record::getPassword)
                 .set(created).equalTo(record::getCreated)
                 .set(updated).equalTo(record::getUpdated);
     }
@@ -176,6 +181,7 @@ public interface UserMapper {
                 .set(nickname).equalToWhenPresent(record::getNickname)
                 .set(status).equalToWhenPresent(record::getStatus)
                 .set(role).equalToWhenPresent(record::getRole)
+                .set(password).equalToWhenPresent(record::getPassword)
                 .set(created).equalToWhenPresent(record::getCreated)
                 .set(updated).equalToWhenPresent(record::getUpdated);
     }
@@ -187,6 +193,7 @@ public interface UserMapper {
             .set(nickname).equalTo(record::getNickname)
             .set(status).equalTo(record::getStatus)
             .set(role).equalTo(record::getRole)
+            .set(password).equalTo(record::getPassword)
             .set(created).equalTo(record::getCreated)
             .set(updated).equalTo(record::getUpdated)
             .where(id, isEqualTo(record::getId))
@@ -200,6 +207,7 @@ public interface UserMapper {
             .set(nickname).equalToWhenPresent(record::getNickname)
             .set(status).equalToWhenPresent(record::getStatus)
             .set(role).equalToWhenPresent(record::getRole)
+            .set(password).equalToWhenPresent(record::getPassword)
             .set(created).equalToWhenPresent(record::getCreated)
             .set(updated).equalToWhenPresent(record::getUpdated)
             .where(id, isEqualTo(record::getId))

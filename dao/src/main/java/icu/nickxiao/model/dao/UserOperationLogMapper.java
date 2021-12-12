@@ -35,7 +35,7 @@ import org.mybatis.dynamic.sql.util.mybatis3.MyBatis3Utils;
 @Mapper
 public interface UserOperationLogMapper {
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source Table: user_operation_log")
-    BasicColumn[] selectList = BasicColumn.columnList(requestId, method, userId, status, created, updated, requestBody, responseBody, requestParams);
+    BasicColumn[] selectList = BasicColumn.columnList(requestId, method, userId, status, url, created, updated, requestBody, responseBody, requestParams);
 
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source Table: user_operation_log")
     @SelectProvider(type=SqlProviderAdapter.class, method="select")
@@ -65,6 +65,7 @@ public interface UserOperationLogMapper {
         @Result(column="method", property="method", jdbcType=JdbcType.VARCHAR),
         @Result(column="user_id", property="userId", jdbcType=JdbcType.BIGINT),
         @Result(column="status", property="status", jdbcType=JdbcType.INTEGER),
+        @Result(column="url", property="url", jdbcType=JdbcType.VARCHAR),
         @Result(column="created", property="created", jdbcType=JdbcType.TIMESTAMP),
         @Result(column="updated", property="updated", jdbcType=JdbcType.TIMESTAMP),
         @Result(column="request_body", property="requestBody", jdbcType=JdbcType.LONGVARCHAR),
@@ -101,6 +102,7 @@ public interface UserOperationLogMapper {
             .map(method).toProperty("method")
             .map(userId).toProperty("userId")
             .map(status).toProperty("status")
+            .map(url).toProperty("url")
             .map(created).toProperty("created")
             .map(updated).toProperty("updated")
             .map(requestBody).toProperty("requestBody")
@@ -116,6 +118,7 @@ public interface UserOperationLogMapper {
             .map(method).toProperty("method")
             .map(userId).toProperty("userId")
             .map(status).toProperty("status")
+            .map(url).toProperty("url")
             .map(created).toProperty("created")
             .map(updated).toProperty("updated")
             .map(requestBody).toProperty("requestBody")
@@ -131,6 +134,7 @@ public interface UserOperationLogMapper {
             .map(method).toPropertyWhenPresent("method", record::getMethod)
             .map(userId).toPropertyWhenPresent("userId", record::getUserId)
             .map(status).toPropertyWhenPresent("status", record::getStatus)
+            .map(url).toPropertyWhenPresent("url", record::getUrl)
             .map(created).toPropertyWhenPresent("created", record::getCreated)
             .map(updated).toPropertyWhenPresent("updated", record::getUpdated)
             .map(requestBody).toPropertyWhenPresent("requestBody", record::getRequestBody)
@@ -172,6 +176,7 @@ public interface UserOperationLogMapper {
                 .set(method).equalTo(record::getMethod)
                 .set(userId).equalTo(record::getUserId)
                 .set(status).equalTo(record::getStatus)
+                .set(url).equalTo(record::getUrl)
                 .set(created).equalTo(record::getCreated)
                 .set(updated).equalTo(record::getUpdated)
                 .set(requestBody).equalTo(record::getRequestBody)
@@ -185,6 +190,7 @@ public interface UserOperationLogMapper {
                 .set(method).equalToWhenPresent(record::getMethod)
                 .set(userId).equalToWhenPresent(record::getUserId)
                 .set(status).equalToWhenPresent(record::getStatus)
+                .set(url).equalToWhenPresent(record::getUrl)
                 .set(created).equalToWhenPresent(record::getCreated)
                 .set(updated).equalToWhenPresent(record::getUpdated)
                 .set(requestBody).equalToWhenPresent(record::getRequestBody)
@@ -198,6 +204,7 @@ public interface UserOperationLogMapper {
             c.set(method).equalTo(record::getMethod)
             .set(userId).equalTo(record::getUserId)
             .set(status).equalTo(record::getStatus)
+            .set(url).equalTo(record::getUrl)
             .set(created).equalTo(record::getCreated)
             .set(updated).equalTo(record::getUpdated)
             .set(requestBody).equalTo(record::getRequestBody)
@@ -213,6 +220,7 @@ public interface UserOperationLogMapper {
             c.set(method).equalToWhenPresent(record::getMethod)
             .set(userId).equalToWhenPresent(record::getUserId)
             .set(status).equalToWhenPresent(record::getStatus)
+            .set(url).equalToWhenPresent(record::getUrl)
             .set(created).equalToWhenPresent(record::getCreated)
             .set(updated).equalToWhenPresent(record::getUpdated)
             .set(requestBody).equalToWhenPresent(record::getRequestBody)

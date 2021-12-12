@@ -38,7 +38,7 @@ public class BlogBizServiceImpl implements IBlogBizService {
     public BlogsVO blogs(BlogRequest request) {
         List<BlogDto> blogs = blogModelService.query(BlogQueryData.builder()
                 .limit(request.getLimit())
-                .offset(request.getOffset())
+                .offset((request.getOffset() - 1) * request.getLimit())
                 .all(false)
                 .build());
         Long total = blogModelService.count();

@@ -47,6 +47,13 @@ public final class UserDynamicSqlSupport {
 
     /**
      * Database Column Remarks:
+     *   密码
+     */
+    @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user.password")
+    public static final SqlColumn<String> password = user.password;
+
+    /**
+     * Database Column Remarks:
      *   创建时间
      */
     @Generated(value="org.mybatis.generator.api.MyBatisGenerator", comments="Source field: user.created")
@@ -70,6 +77,8 @@ public final class UserDynamicSqlSupport {
         public final SqlColumn<String> status = column("`status`", JDBCType.VARCHAR);
 
         public final SqlColumn<String> role = column("`role`", JDBCType.VARCHAR);
+
+        public final SqlColumn<String> password = column("`password`", JDBCType.VARCHAR);
 
         public final SqlColumn<LocalDateTime> created = column("created", JDBCType.TIMESTAMP);
 

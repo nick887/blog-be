@@ -4,9 +4,11 @@ import icu.nickxiao.rest.biz.IBlogBizService;
 import icu.nickxiao.rest.request.blog.AddBlogRequest;
 import icu.nickxiao.rest.request.blog.BlogRequest;
 
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,28 +30,32 @@ import lombok.RequiredArgsConstructor;
 public class BlogController {
     private final IBlogBizService blogBizService;
 
-    @GetMapping("/")
-    public BlogsVO blogs(BlogRequest request) {
+    @PostMapping("")
+    public BlogsVO blogs(@RequestBody BlogRequest request) {
         return blogBizService.blogs(request);
     }
 
     @GetMapping("/{id}")
     public BlogVO blog(@PathVariable Long id) {
+        System.out.println(id);
         return blogBizService.blog(id);
     }
 
     @PostMapping("/add")
-    public void add(AddBlogRequest request) {
+    @RequiresAuthentication
+    public void add(@RequestBody AddBlogRequest request) {
         blogBizService.add(request);
     }
 
     @PostMapping("/update")
-    public void update(UpdateBlogRequest request) {
+    @RequiresAuthentication
+    public void update(@RequestBody UpdateBlogRequest request) {
         blogBizService.update(request);
     }
 
     @PostMapping("/delete")
-    public void delete(DeleteBlogRequest request) {
+    @RequiresAuthentication
+    public void delete(@RequestBody DeleteBlogRequest request) {
         blogBizService.delete(request);
     }
 }
