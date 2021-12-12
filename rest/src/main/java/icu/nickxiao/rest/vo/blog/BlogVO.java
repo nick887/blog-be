@@ -1,16 +1,14 @@
 package icu.nickxiao.rest.vo.blog;
 
+import icu.nickxiao.model.dto.BlogDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 /**
- * @author nick
- * @version 1.0, 2021/12/12
- * @since 1.0.0
+ * @author xiaoyi03 <xiaoyi03@kuaishou.com>
+ * Created on 2021-12-12
  */
 
 @Data
@@ -18,6 +16,5 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BlogVO {
-    private int total;
-    private List<Blog>;
+    private BlogDto blog;
 }

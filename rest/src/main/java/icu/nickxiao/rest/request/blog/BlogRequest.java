@@ -12,9 +12,6 @@ import lombok.NoArgsConstructor;
  * @since 1.0.0
  */
 @Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
 public class BlogRequest extends PageRequest {
 
 }

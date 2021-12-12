@@ -1,0 +1,3 @@
+common:
+  secretKey: test
+  jwtTokenExpireHours: 48

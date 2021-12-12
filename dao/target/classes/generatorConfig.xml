@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!-- jdbc配置文件路径 -->
+    <properties resource="jdbc.properties"/>
+    <!-- 数据库的JDBC驱动位置 -->
+    <classPathEntry
+            location="${user.home}/.m2/repository/mysql/mysql-connector-java/8.0.22/mysql-connector-java-8.0.22.jar"/>
+    <context id="MysqlTables" defaultModelType="conditional" targetRuntime="MyBatis3DynamicSql">
+        <!-- 当表名或者字段名为SQL关键字的时候，自动添加分隔符 -->
+        <property name="autoDelimitKeywords" value="true"/>
+        <!-- 用反引号`包裹，默认是双引号" -->
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.FluentBuilderMethodsPlugin"/>
+
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true=是；false=否 -->
+            <property name="addRemarkComments" value="true"/>
+            <!-- 阻止生成的注释包含时间戳 -->
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="${jdbc.driver}"
+                        connectionURL="${jdbc.url}"
+                        userId="${jdbc.userId}"
+                        password="${jdbc.password}">
+            <property name="serverTimezone" value="${jdbc.serverTimezone}"/>
+            <property name="useSSL" value="${jdbc.useSSL}"/>
+            <property name="nullCatalogMeansCurrent" value="${jdbc.nullCatalogMeansCurrent}"/>
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <!-- true，把JDBC DECIMAL 和 NUMERIC 类型解析为java.math.BigDecimal -->
+            <property name="forceBigDecimals" value="true"/>
+            <!-- timestamp 字段使用LocalDate -->
+            <property name="useJSR310Types" value="true"/>
+        </javaTypeResolver>
+        <!-- entity目录 -->
+        <javaModelGenerator targetPackage="icu.nickxiao.model.entity" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!-- annotated mapper目录 -->
+        <javaClientGenerator type="ANNOTATEDMAPPER" targetPackage="icu.nickxiao.model.dao"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- 生成所有表 -->
+        <table tableName="%" >
+            <property name="useActualColumnNames" value="false"/>
+        </table>
+        <!-- 生成指定表  -->
+
+    </context>
+
+</generatorConfiguration>
